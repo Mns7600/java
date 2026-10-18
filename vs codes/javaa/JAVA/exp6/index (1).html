@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MELODY - Music and Lyrics</title>
+  <style>
+    body { margin: 0; background: #fffaf1; color: #292433; font-family: Arial, sans-serif; text-align: center; }
+    header { background: #fff; padding: 18px; border-bottom: 3px solid #8a58d6; }
+    h1 { color: #7443bd; margin: 0; }
+    h2 { color: #7443bd; }
+    /* The page has a main content area and a full-height sidebar. */
+    .page { display: flex; align-items: stretch; min-height: calc(100vh - 95px); }
+    .main { width: 73%; padding: 18px; box-sizing: border-box; }
+    .container { display: flex; gap: 16px; align-items: flex-start; }
+    .left { width: 38%; }
+    .middle { width: 62%; }
+    .right { width: 27%; padding: 20px; box-sizing: border-box; background: #ffffff; border-left: 2px solid #e7dff1; }
+    .right h2 { text-align: left; }
+    .right hr { margin: 24px 0; }
+    .panel { background: white; border: 1px solid #e7dff1; border-radius: 10px; padding: 16px; box-sizing: border-box; }
+    .cover { width: 100%; max-width: 280px; border-radius: 8px; }
+    button, #reg, #clr { background: #8055d9; color: white; border: 0; border-radius: 5px; padding: 10px 14px; cursor: pointer; margin: 4px; }
+    #reg { background: green; }
+    #clr { background: #bf3333; }
+    audio, video { width: 100%; max-width: 350px; margin-top: 12px; }
+    .lyrics { line-height: 2; }
+    .right ul, .right ol { text-align: left; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #b9abc9; padding: 8px; text-align: left; }
+    th { background: #e8d9ff; }
+    a { color: #7443bd; }
+    .feedback { max-width: 720px; margin: 24px auto; }
+    input, textarea { padding: 8px; margin: 6px; max-width: 90%; }
+    hr { border: 0; border-top: 1px solid #e1d6ea; margin: 20px 0; }
+    @media (max-width: 800px) {
+      .page, .container { flex-direction: column; }
+      .main, .left, .middle, .right { width: 100%; }
+      .right { border-left: 0; border-top: 2px solid #e7dff1; }
+    }
+  </style>
+  <script>
+    function showAudio() {
+      document.getElementById("audioBox").style.display = "block";
+      document.getElementById("videoBox").style.display = "none";
+      document.getElementById("video").pause();
+    }
+    function showVideo() {
+      document.getElementById("audioBox").style.display = "none";
+      document.getElementById("videoBox").style.display = "block";
+      document.getElementById("audio").pause();
+    }
+    function validateForm() {
+      let email = document.getElementById("e1").value;
+      if (!/^[\w.%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+        alert(email ? "Invalid Email" : "Please enter email");
+        return false;
+      }
+      alert("Thank you for your feedback!");
+      return false; // Demo only: do not submit to a server.
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>♫ MELODY</h1>
+    <p>Your Music & Lyrics Space</p>
+  </header>
+
+  <div class="page">
+    <main class="main">
+      <div class="container">
+    <div class="left panel">
+      <h2>Now Playing</h2>
+      <h3>Midnight Dreams</h3>
+      <p>Demo Artist</p>
+      <button onclick="showAudio()">♫ Audio</button>
+      <button onclick="showVideo()">▶ Video</button>
+      <div id="audioBox">
+        <img class="cover" src="cover.jpg" alt="Album cover">
+        <audio id="audio" controls>
+          <source src="song.mp3" type="audio/mpeg">
+          Your browser does not support audio.
+        </audio>
+      </div>
+      <div id="videoBox" style="display:none">
+        <video id="video" controls>
+          <source src="song.mp4" type="video/mp4">
+          Your browser does not support video.
+        </video>
+      </div>
+    </div>
+
+    <div class="middle panel">
+      <h2>Midnight Dreams — Lyrics</h2>
+      <p><i>Original demo lyrics</i></p>
+      <p class="lyrics">
+        Underneath the midnight sky,<br>
+        We chase the dreams that never die,<br>
+        The stars are shining way up high,<br>
+        Together we can learn to fly.
+      </p>
+      <hr>
+      <p class="lyrics">
+        Every moment feels so bright,<br>
+        Every dream becomes a light,<br>
+        We keep moving through the night,<br>
+        Until the morning feels just right.
+      </p>
+    </div>
+
+      </div>
+
+      <div class="feedback panel">
+        <h2>Listener Feedback</h2>
+        <p>Enjoyed the music? Share your thoughts!</p>
+        <form onsubmit="return validateForm()">
+          Name: <input type="text" required><br><br>
+          Age: <input type="number" min="1" required><br><br>
+          Email: <input type="text" id="e1" placeholder="Enter email"><br><br>
+          Feedback: <textarea rows="4" cols="32" placeholder="Write your feedback" required></textarea><br><br>
+          <input type="submit" id="reg" value="Submit Feedback">
+          <input type="reset" id="clr" value="Clear">
+        </form>
+        <p><small>Demo form: feedback is not saved or sent.</small></p>
+      </div>
+    </main>
+
+    <aside class="right">
+      <h2>Artist Albums</h2>
+      <ul>
+        <li>Album One
+          <ol>
+            <li>Midnight Dreams</li>
+            <li>Starlight</li>
+            <li>Ocean Eyes</li>
+          </ol>
+        </li>
+        <li>Album Two
+          <ol>
+            <li>Golden Hour</li>
+            <li>Moonlight Road</li>
+          </ol>
+        </li>
+      </ul>
+      <hr>
+      <h2>Song Information</h2>
+      <table>
+        <tr><th>Detail</th><th>Information</th></tr>
+        <tr><td>Song</td><td>Midnight Dreams</td></tr>
+        <tr><td>Artist</td><td>Demo Artist</td></tr>
+        <tr><td>Album</td><td>Album One</td></tr>
+        <tr><td>Writer</td><td>Demo Writer</td></tr>
+        <tr><td>Producer</td><td>Demo Producer</td></tr>
+        <tr><td>Genre</td><td>Pop</td></tr>
+      </table>
+      <hr>
+      <h2>Music Links</h2>
+      <p><a href="https://music.youtube.com" target="_blank" rel="noopener noreferrer">Listen on YouTube Music</a></p>
+      <p><a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer">Explore on Spotify</a></p>
+    </aside>
+  </div>
+  <p>© MELODY — Music & Lyrics Website</p>
+</body>
+</html>

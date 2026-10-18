@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: sans-serif;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="myForm">
+        <h2>Register</h2>
+
+        Enter name:
+        <input type="text" id="username" required>
+
+        Enter email:
+        <input type="email" id="email" required>
+
+        Enter password:
+        <input type="password" id="password" required>
+
+        <button type="submit">Submit</button>
+
+        <p id="result"></p>
+    </form>
+
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            console.log(name, email, password);
+
+            document.getElementById('result').textContent = "Submitted: " + email;
+
+            this.reset();
+        });
+    </script>
+</body>
+</html>

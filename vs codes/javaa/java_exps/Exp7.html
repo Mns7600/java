@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Background Changer</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            transition: background-color 0.5s ease;
+            /* Adds smooth color fading */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Automatic Background Color Changer</h1>
+        <p>The background color of this page changes automatically every 5 seconds.</p>
+    </div>
+
+    <script>
+        const colors = [
+            '#e6f2ff',
+            '#f3e6ff',
+            '#ffffcc',
+            '#ffe6e6',
+            '#ffe0cc'
+        ];
+
+        let colorindex = 0;
+
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = colors[colorindex];
+            colorindex = (colorindex + 1) % colors.length;
+        }
+
+        changeBackgroundColor();
+
+        setInterval(changeBackgroundColor, 5000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melody - Music and Lyrics</title>
+  <style>
+    body { margin: 0; background: #faf8f2; color: #333; font-family: Arial; }
+    header, footer { text-align: center; padding: 15px; background: #e5eadf; }
+    h1, h2 { color: #536747; }
+    h1 { font-family: Georgia, serif; font-size: 38px; letter-spacing: 5px; margin: 15px 0; }
+    .page { display: flex; padding: 25px; gap: 30px; }
+    main { flex: 3; }
+    aside { flex: 1; border-left: 1px solid #ccc; padding-left: 25px; }
+    .song { display: flex; gap: 30px; }
+    .player { flex: 1; min-width: 0; text-align: center; }
+    .lyrics { flex: 1; min-width: 0; line-height: 2; }
+    pre { font-family: inherit; white-space: pre-wrap; overflow-wrap: anywhere; }
+    img, audio, video { width: 95%; max-width: 480px; display: block; margin: auto; }
+    img { height: auto; margin-bottom: 6px; }
+    video { height: auto; }
+    button, input, textarea { padding: 8px; margin: 5px 0; }
+    button, #reg { background: #536747; color: white; border: 0; }
+    #clr { background: #eee; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background: #e5eadf; }
+    a { color: #536747; }
+    hr { border: 0; border-top: 1px solid #ccc; margin: 25px 0; }
+    @media (max-width: 700px) {
+      .page, .song { flex-direction: column; }
+      aside { border-left: 0; padding-left: 0; }
+    }
+  </style>
+  <script>
+    function showMedia(mode) {
+      document.getElementById("audioBox").hidden = mode !== "audio";
+      document.getElementById("videoBox").hidden = mode !== "video";
+      document.getElementById("audio").pause();
+      document.getElementById("video").pause();
+    }
+    function validateForm() {
+      let email = document.getElementById("e1").value;
+      if (!/^[\w.%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+        alert(email ? "Invalid Email" : "Please enter email");
+        return false;
+      }
+      alert("Thank you! This demo does not save feedback.");
+      return false;
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>&#9835; MELODY</h1>
+    <p>Your Music &amp; Lyrics Space</p>
+  </header>
+  <div class="page">
+    <main>
+      <h2>Photograph</h2>
+      <p>Ed Sheeran &bull; x (Multiply)</p>
+      <div class="song">
+        <div class="player">
+          <p>
+            <button onclick="showMedia('audio')">Audio</button>
+            <button onclick="showMedia('video')">Video</button>
+          </p>
+          <div id="audioBox">
+            <img src="cover.jpg" alt="Photograph album cover">
+            <audio id="audio" src="song.mp3" controls></audio>
+          </div>
+          <div id="videoBox" hidden>
+            <video id="video" src="song.mp4" controls></video>
+          </div>
+        </div>
+        <div class="lyrics">
+          <h2>Lyrics</h2>
+          <pre>Loving can hurt, loving can hurt sometimes
+But it's the only thing that I know...
+</pre>
+        </div>
+      </div>
+    </main>
+    <aside>
+      <h2>Song Information</h2>
+      <table>
+        <tr><th>Detail</th><th>Information</th></tr>
+        <tr><td>Song</td><td>Photograph</td></tr>
+        <tr><td>Artist</td><td>Ed Sheeran</td></tr>
+        <tr><td>Album</td><td>x (Multiply)</td></tr>
+        <tr><td>Genre</td><td>Pop</td></tr>
+      </table>
+      <h2>Artist Albums</h2>
+      <ul>
+        <li>x (Multiply)
+          <ol><li>Photograph</li><li>Thinking Out Loud</li></ol>
+        </li>
+        <li>&#247; (Divide)
+          <ol><li>Shape of You</li><li>Perfect</li></ol>
+        </li>
+      </ul>
+      <h2>Music Links</h2>
+      <a href="https://music.youtube.com" target="_blank" rel="noopener">YouTube Music</a><br><br>
+      <a href="https://open.spotify.com" target="_blank" rel="noopener">Spotify</a>
+    </aside>
+  </div>
+  <footer>
+    <h2>Listener Feedback</h2>
+    <form onsubmit="return validateForm()">
+      <label>Name: <input type="text" required></label><br>
+      <label>Age: <input type="number" min="1" required></label><br>
+      <label>Email: <input type="text" id="e1" placeholder="Enter email"></label><br>
+      <label>Feedback: <textarea rows="3" required></textarea></label><br>
+      <input type="submit" id="reg" value="Submit Feedback">
+      <input type="reset" id="clr" value="Clear">
+    </form>
+    <p>Demo form: feedback is not saved or sent.</p>
+  </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Midnight Dreams · Melody</title>
+<style>
+:root{--paper:#faf9f6;--ink:#282a29;--muted:#747672;--line:#e3e3dc;--accent:#666449;--soft:#eeeee6}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-size:14px}a{color:inherit;text-decoration:none}a:hover{text-decoration:underline}button,input,textarea{font:inherit}button,a,input,textarea{outline-offset:5px}button{cursor:pointer}header{border-bottom:1px solid var(--line)}.header-inner{max-width:1400px;margin:auto;padding:25px 48px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:23px;font-weight:800;letter-spacing:-1px;display:flex;align-items:center;gap:10px}.brand-mark{display:flex;align-items:center;gap:3px;height:24px}.brand-mark i{display:block;width:4px;border-radius:4px;background:var(--accent);height:14px}.brand-mark i:nth-child(2){height:24px}.brand-mark i:nth-child(3){height:19px}nav{display:flex;gap:28px;color:var(--muted);font-size:12px}nav a:first-child{color:var(--ink)}.edition{font-size:11px;letter-spacing:1.7px;text-transform:uppercase;color:var(--muted)}main{max-width:1400px;margin:auto;padding:36px 48px 0}.breadcrumb{font-size:11px;color:var(--muted);display:flex;gap:12px;margin-bottom:34px}.page-heading{display:flex;align-items:end;justify-content:space-between;margin-bottom:32px}.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:10px;color:var(--accent);font-weight:700;margin:0 0 13px}h1{font-family:Georgia,'Times New Roman',serif;font-weight:400;letter-spacing:-2px;font-size:58px;line-height:1.05;margin:0 0 14px}.byline{margin:0;color:var(--muted);font-size:13px}.byline span{padding:0 8px;color:#b6b6ab}.track-label{font-size:10px;letter-spacing:1.5px;color:var(--muted);padding-bottom:5px}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 294px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.listening-room{padding:33px 34px 38px 0;display:grid;grid-template-columns:minmax(210px,0.92fr) minmax(240px,1fr);gap:40px}.art{width:100%;display:block;aspect-ratio:1;border-radius:3px;background:#c5d0c6}.art-caption{display:flex;justify-content:space-between;margin:12px 0 25px;color:var(--muted);font-size:10px;letter-spacing:1.5px}.mode-switch{display:flex;background:var(--soft);padding:4px;border-radius:7px;margin-bottom:20px}.mode-switch button{width:50%;border:0;color:var(--muted);background:transparent;padding:10px;border-radius:5px;font-size:12px}.mode-switch button[aria-pressed="true"]{background:var(--paper);color:var(--ink);box-shadow:0 1px 4px #25251012}.media-name{font-family:Georgia,serif;font-size:22px;margin:0 0 6px}.artist{color:var(--muted);font-size:12px;margin:0 0 20px}audio,video{width:100%;display:block;margin:10px 0}video{background:#252b2b;max-height:240px}.load-file{display:inline-block;border-bottom:1px solid #b4b4a1;padding:7px 0;font-size:12px;color:var(--accent);cursor:pointer}.load-file input{display:block;width:100%;font-size:11px;margin-top:10px;max-width:250px}.file-note{color:var(--muted);font-size:11px;line-height:1.7;margin:10px 0 0}.lyrics-header{display:flex;align-items:center;justify-content:space-between;padding:0 0 20px;border-bottom:1px solid var(--line)}h2{font-size:16px;font-weight:500;margin:0}.lyrics-header span{color:var(--muted);font-size:10px}.verse-label{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#8b8c7c;margin:28px 0 12px}.verse{font-family:Georgia,'Times New Roman',serif;font-size:19px;line-height:1.95;margin:0;letter-spacing:-.25px}.verse.chorus{color:var(--accent)}.lyric-footnote{font-size:10px;color:var(--muted);line-height:1.8;margin-top:30px}.sidebar{padding:33px 0 30px 28px;border-left:1px solid var(--line)}.sidebar section+section{border-top:1px solid var(--line);margin-top:25px;padding-top:25px}.section-heading{display:flex;align-items:center;gap:10px;margin-bottom:17px}.section-number{font-size:9px;color:#939581;font-family:monospace}.sidebar h2{font-size:14px}.details{width:100%;border-collapse:collapse;font-size:11px}.details caption{text-align:left;color:var(--muted);font-size:10px;padding-bottom:12px}.details th,.details td{text-align:left;vertical-align:top;padding:9px 0;border-bottom:1px solid #ebebe4}.details th{font-weight:400;color:var(--muted);width:39%}.details td{padding-left:8px}.albums{margin:0;padding-left:15px;font-size:11px;line-height:1.7}.albums>li{padding-left:2px;margin-bottom:12px}.albums ol{padding-left:22px;margin-top:7px;color:var(--muted)}.albums ol li{padding:3px 0}.albums .current{color:var(--accent);font-weight:700}.music-link{display:flex;justify-content:space-between;align-items:center;font-size:11px;padding:11px 0}.music-link span:last-child{color:var(--accent);font-size:16px}.feedback{display:grid;grid-template-columns:1fr 2fr;gap:60px;padding:37px 0 40px}.feedback h2{font-family:Georgia,serif;font-size:29px;margin:0 0 10px;letter-spacing:-.7px}.feedback p{color:var(--muted);font-size:12px;line-height:1.8;margin:0;max-width:240px}.form-grid{display:grid;grid-template-columns:1fr 80px 1.3fr;gap:16px}label{font-size:10px;color:var(--muted);display:block}input,textarea{width:100%;border:1px solid #dcded3;border-radius:4px;background:transparent;color:var(--ink);padding:11px 12px;margin-top:8px;font-size:12px}textarea{resize:vertical;min-height:75px}.message-field{grid-column:1/-1}.form-bottom{display:flex;align-items:center;gap:15px;margin-top:14px}.submit{background:var(--accent);color:white;border:0;border-radius:4px;padding:11px 18px;font-size:11px}.reset{border:0;background:none;color:var(--muted);font-size:11px;padding:10px}.demo-note{font-size:10px;color:var(--muted);margin-left:auto}.status{font-size:12px;color:var(--accent);margin-top:12px}footer{max-width:1400px;margin:auto;padding:20px 48px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--muted);font-size:10px}.skip{position:absolute;top:-60px;left:20px;background:white;padding:10px}.skip:focus{top:10px}[hidden]{display:none!important}
+@media(min-width:1500px){main{padding-top:45px}.listening-room{gap:55px}.verse{font-size:21px}}
+@media(max-width:1100px){.workspace{grid-template-columns:minmax(0,1fr) 250px}.listening-room{gap:25px;padding-right:25px;grid-template-columns:minmax(175px,.9fr) minmax(180px,1fr)}.verse{font-size:16px}.sidebar{padding-left:22px}.header-inner,main,footer{padding-left:28px;padding-right:28px}.feedback{gap:30px}.edition{display:none}}
+@media(max-width:800px){.workspace{grid-template-columns:1fr}.sidebar{border-left:0;border-top:1px solid var(--line);padding:28px 0;display:grid;grid-template-columns:1fr 1fr;gap:25px}.sidebar section+section{margin-top:0;padding-top:0;border-top:0}.sidebar section:last-child{grid-column:1/-1}.listening-room{padding-right:0}.feedback{grid-template-columns:1fr;gap:24px}.feedback p{max-width:none}h1{font-size:48px}.track-label{display:none}}
+@media(max-width:500px){.header-inner,main,footer{padding-left:20px;padding-right:20px}.header-inner{padding-top:20px;padding-bottom:20px}nav{gap:16px;font-size:11px}.breadcrumb{margin-bottom:26px}.listening-room{grid-template-columns:1fr;gap:32px}.player{max-width:100%}.art{max-width:340px;margin:auto}.verse{font-size:21px}.sidebar{grid-template-columns:1fr}.sidebar section+section{border-top:1px solid var(--line);padding-top:22px}.form-grid{grid-template-columns:1fr 70px}.email-field{grid-column:1/-1}.form-bottom{flex-wrap:wrap}.demo-note{width:100%;margin-left:0}h1{font-size:43px}footer{gap:20px;font-size:9px}.lyrics-header{padding-bottom:16px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to song</a>
+<header><div class="header-inner"><a class="brand" href="#main" aria-label="Melody home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>melody<span style="color:#96977c">.</span></a><nav aria-label="Main navigation"><a href="#main">Now listening</a><a href="#albums">Discography</a><a href="#feedback">Feedback</a></nav><span class="edition">A little closer to the music</span></div></header>
+<main id="main">
+<div class="breadcrumb"><a href="#main">Library</a><span>/</span><span>Demo Artist</span><span>/</span><span>Midnight Dreams</span></div>
+<div class="page-heading"><div><p class="eyebrow">The listening room &nbsp; / &nbsp; 001</p><h1>Midnight Dreams</h1><p class="byline">Demo Artist <span>·</span> Album One <span>·</span> Pop</p></div><span class="track-label">PRESS PLAY. STAY A WHILE.</span></div>
+<div class="workspace">
+<section class="listening-room" aria-label="Song player and lyrics">
+<div class="player">
+<svg class="art" viewBox="0 0 500 500" role="img" aria-labelledby="art-title" xmlns="http://www.w3.org/2000/svg"><title id="art-title">Midnight Dreams album artwork: a moon above layered misty mountains</title><defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#bac9c3"/><stop offset="1" stop-color="#e8e4d2"/></linearGradient><linearGradient id="hill" x2="0" y2="1"><stop stop-color="#768e85"/><stop offset="1" stop-color="#3f5b53"/></linearGradient><filter id="grain"><feTurbulence baseFrequency=".65" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".11"/></feComponentTransfer><feBlend in="SourceGraphic" mode="soft-light"/></filter></defs><g filter="url(#grain)"><path fill="url(#sky)" d="M0 0h500v500H0z"/><circle cx="351" cy="124" r="44" fill="#f6efd7"/><path d="M0 290 85 201 153 265 247 178 340 267 409 227 500 285v215H0Z" fill="#9baea3"/><path d="m0 332 98-51 67 32 106-74 102 74 68-25 59 27v185H0Z" fill="#81988d"/><path d="M0 361q85-83 186-10t314-8v157H0Z" fill="url(#hill)"/><path d="M0 438q114-98 258-14t242-13v89H0Z" fill="#304f47"/></g><text x="34" y="49" fill="#354d45" font-family="Arial,sans-serif" font-size="10" letter-spacing="4">DEMO ARTIST</text><text x="34" y="458" fill="#f0ead6" font-family="Georgia,serif" font-size="34" letter-spacing="-1">Midnight Dreams</text><text x="36" y="480" fill="#d5decc" font-family="Arial,sans-serif" font-size="8" letter-spacing="3">ALBUM ONE — ORIGINAL DEMO</text></svg>
+<div class="art-caption"><span>ALBUM ONE</span><span>01 / 03</span></div>
+<div class="mode-switch" role="group" aria-label="Playback mode"><button type="button" id="audio-mode" aria-pressed="true">♫ &nbsp; Audio</button><button type="button" id="video-mode" aria-pressed="false">▷ &nbsp; Video</button></div>
+<h2 class="media-name">Midnight Dreams</h2><p class="artist">Demo Artist</p>
+<div id="audio-panel"><audio id="audio" controls hidden aria-label="Midnight Dreams audio player"></audio></div>
+<div id="video-panel" hidden><video id="video" controls hidden aria-label="Midnight Dreams video player"></video></div>
+<label class="load-file" for="media-file"><span id="load-label">Choose an audio file to play ↗</span><input id="media-file" type="file" accept="audio/*"></label>
+<p class="file-note" id="media-status" role="status">Add your song from your device. Your file stays in your browser.</p>
+</div>
+<div class="lyrics"><div class="lyrics-header"><h2>Lyrics</h2><span>ORIGINAL DEMO</span></div><p class="verse-label">Verse 01</p><p class="verse">Underneath the midnight sky,<br>We chase the dreams that never die,<br>The stars are shining way up high,<br>Together we can learn to fly.</p><p class="verse-label">Chorus</p><p class="verse chorus">Every moment feels so bright,<br>Every dream becomes a light,<br>We keep moving through the night,<br>Until the morning feels just right.</p><p class="lyric-footnote">Words to get lost in.<br>Original demo lyrics · Demo Writer</p></div>
+</section>
+<aside class="sidebar" aria-label="About the song">
+<section><div class="section-heading"><span class="section-number">01</span><h2>Behind the song</h2></div><table class="details"><caption>Song information &amp; credits</caption><tbody><tr><th scope="row">Song</th><td>Midnight Dreams</td></tr><tr><th scope="row">Artist</th><td>Demo Artist</td></tr><tr><th scope="row">Album</th><td>Album One</td></tr><tr><th scope="row">Writer</th><td>Demo Writer</td></tr><tr><th scope="row">Producer</th><td>Demo Producer</td></tr><tr><th scope="row">Genre</th><td>Pop</td></tr></tbody></table></section>
+<section id="albums"><div class="section-heading"><span class="section-number">02</span><h2>Artist discography</h2></div><ul class="albums"><li>Album One<ol><li class="current">Midnight Dreams</li><li>Starlight</li><li>Ocean Eyes</li></ol></li><li>Album Two<ol><li>Golden Hour</li><li>Moonlight Road</li></ol></li></ul></section>
+<section><div class="section-heading"><span class="section-number">03</span><h2>Keep exploring</h2></div><a class="music-link" href="https://music.youtube.com/" target="_blank" rel="noopener noreferrer"><span>YouTube Music</span><span aria-hidden="true">↗</span></a><a class="music-link" href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer"><span>Spotify</span><span aria-hidden="true">↗</span></a><p class="file-note">Explore the platforms in a new tab.</p></section>
+</aside></div>
+<section class="feedback" id="feedback"><div><p class="eyebrow" style="margin-bottom:13px">A note from you</p><h2>How did it feel?</h2><p>A favourite line, a passing thought.<br>We’d love to hear what stayed with you.</p></div><form id="feedback-form"><div class="form-grid"><label>Name<input name="name" autocomplete="name" placeholder="Your name" required maxlength="100"></label><label>Age<input name="age" type="number" min="1" max="120" placeholder="Age" required></label><label class="email-field">Email<input name="email" type="email" autocomplete="email" placeholder="you@example.com" required></label><label class="message-field">Your thoughts<textarea name="feedback" placeholder="This song made me feel…" required maxlength="2000"></textarea></label></div><div class="form-bottom"><button class="submit" type="submit">Submit feedback &nbsp; ↗</button><button class="reset" type="reset">Clear</button><span class="demo-note">Demo form · Responses are not sent or saved.</span></div><div class="status" id="feedback-status" role="status"></div></form></section>
+</main><footer><span>© Melody · Music &amp; lyrics</span><span>Made for the moments between the notes.</span></footer>
+<script>
+const audio = document.getElementById('audio');
+const video = document.getElementById('video');
+const fileInput = document.getElementById('media-file');
+let mode = 'audio';
+const urls = {audio: null, video: null};
+const names = {audio: '', video: ''};
+function setMode(next) {
+  audio.pause(); video.pause(); mode = next;
+  for (const kind of ['audio', 'video']) {
+    document.getElementById(kind + '-panel').hidden = kind !== mode;
+    document.getElementById(kind + '-mode').setAttribute('aria-pressed', String(kind === mode));
+  }
+  fileInput.value = ''; fileInput.accept = mode + '/*';
+  document.getElementById('load-label').textContent = 'Choose ' + (mode === 'audio' ? 'an audio' : 'a video') + ' file to play ↗';
+  document.getElementById('media-status').textContent = names[mode] ? 'Loaded: ' + names[mode] : 'Add your ' + mode + ' from your device. Your file stays in your browser.';
+}
+document.getElementById('audio-mode').addEventListener('click', () => setMode('audio'));
+document.getElementById('video-mode').addEventListener('click', () => setMode('video'));
+fileInput.addEventListener('change', () => {
+  const file = fileInput.files[0]; if (!file) return;
+  if (file.type && !file.type.startsWith(mode + '/')) {
+    document.getElementById('media-status').textContent = 'Please choose an ' + mode + ' file.'; fileInput.value = ''; return;
+  }
+  const player = mode === 'audio' ? audio : video;
+  player.pause(); player.removeAttribute('src'); player.load();
+  if (urls[mode]) URL.revokeObjectURL(urls[mode]);
+  urls[mode] = URL.createObjectURL(file); names[mode] = file.name;
+  player.src = urls[mode]; player.hidden = false; player.load();
+  document.getElementById('media-status').textContent = 'Loaded: ' + file.name;
+});
+for (const player of [audio, video]) player.addEventListener('error', () => {
+  if (!player.getAttribute('src')) return;
+  document.getElementById('media-status').textContent = 'This file could not be played. Try another file or format.';
+});
+document.getElementById('feedback-form').addEventListener('submit', event => {
+  event.preventDefault();
+  document.getElementById('feedback-status').textContent = 'Thank you! This demo checked your feedback, but did not send or save it.';
+});
+document.getElementById('feedback-form').addEventListener('reset', () => { document.getElementById('feedback-status').textContent = ''; });
+window.addEventListener('beforeunload', () => { Object.values(urls).forEach(url => { if (url) URL.revokeObjectURL(url); }); });
+</script>
+</body>
+</html>
